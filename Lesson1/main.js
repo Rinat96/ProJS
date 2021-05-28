@@ -1,26 +1,38 @@
-const goods = [
-  { title: 'Shirt', price: 150 },
-  { title: 'Socks', price: 50 },
-  { title: 'Jacket', price: 350 },
-  { title: 'Shoes', price: 250 },
-]
+const goods = [{
+    title: 'Shirt',
+    id: 1,
+    price: 200,
+  },
+  {
+    title: 'Socks',
+    id: 2,
+    price: 50
+  },
+  {
+    title: 'Jacket',
+    id: 3,
+    price: 350
+  },
+  {
+    title: 'Shoes',
+    id: 4,
+    price: 250
+  },
+];
 
-const renderGoodsItem = (title, price) => {
-  return `<div class="goods-item"><h3>${title}</h3><p>${price}</p></div>`
-}
+const renderGoodsItem = (title = '-', id = '-', price = '-') => {
+  return `
+  <div class="goods-item">
+    <h3 class="goods-title">Название товара: ${title}</h3>
+      <span>ID товара: ${id}</span>
+    <p class="goods-text">Цена товара: ${price}</p>
+  </div>`
+};
 
 const renderGoodsList = list => {
-  let goodsList = list.map(item => renderGoodsItem(item.title, item.price))
+  let goodsList = list.map(item => renderGoodsItem(item.title, item.id, item.price));
 
-  //   const goodsListDiv = document.querySelector('.goods-list')
-  //   goodsListDiv.innerHTML = goodsList
+  document.querySelector('.goods-list').innerHTML = goodsList.join('');
+};
 
-  document.querySelector('.goods-list').innerHTML = goodsList
-
-}
-
-const init = () => {
-  renderGoodsList(goods)
-}
-
-window.onload = init
+renderGoodsList(goods);
