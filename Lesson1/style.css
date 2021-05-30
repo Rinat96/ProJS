@@ -1,3 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    margin-bottom: 30px;
+    background-color: rgb(80, 68, 68);
+}
+
+header>button {
+    font-size: 16px;
+    color: black;
+    background-color: blanchedalmond;
+    padding: 10px;
+    border: none;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 900;
+}
+
 .goods-list {
     border: 2px solid black;
     display: flex;
@@ -7,8 +35,17 @@
 
 .goods-item {
     border: 1px solid wheat;
-    width: 150px;
+    width: 200px;
     box-sizing: border-box;
-    padding: 0px 20px;
+    padding: 10px 20px;
     margin: 10px 10px;
+}
+
+.goods-title {
+    padding-bottom: 10px;
+}
+
+.goods-text {
+    padding-top: 10px;
+    color: brown;
 }
