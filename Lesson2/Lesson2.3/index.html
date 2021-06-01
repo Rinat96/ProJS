@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Бургеры</title>
+</head>
+
+<body>
+  <main class="container">
+    <form action="#">
+      <h4 class="title">Выберите бургер</h4>
+      <div class="items">
+        <div class="item">
+          <input type="radio" name="size" id="s" value="small" data-cal="20" data-price="50">
+          <label for="s">Маллый бургер (50 рублей, 20 калорий)</label>
+        </div>
+        <div class="item">
+          <input type="radio" name="size" id="xl" value="big" data-cal="40" data-price="100">
+          <label for="xl" checked>Большой бургер (100 рублей, 40 калорий)</label>
+        </div>
+      </div>
+
+      <hr>
+      <h4 class="title">Выберите любую начинку</h4>
+      <div class="items">
+        <div class="item">
+          <input type="radio" name="stuffing" id="salad" value="stuffing-salad" data-cal="5" data-price="20">
+          <label for="salad">С салатом (+20 рублей, +5 калорий)</label>
+        </div>
+        <div class="item">
+          <input type="radio" name="stuffing" id="cheese" value="stuffing-cheese" data-cal="20" data-price="10">
+          <label for="cheese">С сыром (+10 рублей, +20 калорий)</label>
+        </div>
+        <div class="item">
+          <input type="radio" name="stuffing" id="potatoes" value="stuffing-potatoes" data-cal="5" data-price="15">
+          <label for="potatoes">С картошкой (+15 рублей, +10 калорий)</label>
+        </div>
+      </div>
+
+      <hr>
+      <h4 class="title">Выберите топинг</h4>
+      <div class="items">
+        <div class="item">
+          <input type="checkbox" name="topping" id="condiment" value="small" data-cal="15" data-price="0">
+          <label for="condiment">Посыпать преправой (+15 рублей, +0 калорий)</label>
+        </div>
+        <div class="item">
+          <input type="checkbox" name="topping" id="mayonnaise" value="small" data-cal="5" data-price="20">
+          <label for="mayonnaise">Полить майонезом (+20 рублей, +5 калорий)</label>
+        </div>
+      </div>
+      <button type="submit">Заказать</button>
+    </form>
+  </main>
+
+
+
+
+  <script src="app.js"></script>
+</body>
+
+</html>
