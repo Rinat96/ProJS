@@ -44,7 +44,7 @@ button:hover {
     font-weight: 900;
 }
 
-.goods-list {
+.products {
     display: flex;
     justify-content: space-between;
 }

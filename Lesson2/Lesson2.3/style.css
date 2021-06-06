@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(214, 190, 153);
+  font-size: 1.5rem;
+  user-select: none;
+}
+
+.title {
+  padding-top: 15px;
+  padding-bottom: 5px;
+}
+
+.title:first-child {
+  padding-top: 0;
+}
+
+.container {
+  width: 1100px;
+  margin: 0 auto;
+}
+
+form {
+  border: 1px solid gray;
+  padding: 15px 20px;
+}
+
+input {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+button {
+  margin: 0 auto;
+  display: block;
+
+  text-align: center;
+  border: none;
+  padding: 1rem;
+  color: white;
+  font-size: 1rem;
+
+  background-color: brown;
+  border-radius: 5px;
+  outline: none;
+}
