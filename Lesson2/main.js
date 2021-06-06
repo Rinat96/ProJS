@@ -1,4 +1,6 @@
 class Products {
+
+  //свойства объекта
   data = []; //массив с данными о товаре (сервера)
   products = []; //массив всех элементов товара
   container = null; //будет код html
@@ -6,6 +8,22 @@ class Products {
   constructor(selector) {
     this.container = document.querySelector(selector);
   }
+
+
+  //методы объекта
+
+  /*Метод по подсчету суммы элементов в каталоге
+  
+  */
+  sumItems() {
+    let sum = 0;
+
+    for (const product of this.products) {
+      sum += product.price;
+    }
+    return sum;
+  }
+
 
   init() {
     this.fetchData(); //получение данных ссервера
@@ -71,11 +89,15 @@ class ProductItem {
      </div>
  </div>`
   } //возвращает кусочек кода для одного объекта
+
+
 }
 
-const list = new Products('.products');
 
+const list = new Products('.products');
 list.init();
+
+console.log(list.sumItems()); //вызов метода суммы все элементов в котологе
 
 
 /**Задание №2
@@ -89,6 +111,7 @@ class Cart {
    */
 
   /**методы корзины
+   * 
    * render() - выводить весь список элементов;
    * math() - расчет конечной стоимости товаров;
    * post() - отправка полученных данных (наименование товара, количество) на сервер;
