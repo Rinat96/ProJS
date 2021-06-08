@@ -15,12 +15,12 @@
       <h4 class="title">Выберите бургер</h4>
       <div class="items">
         <div class="item">
-          <input type="radio" name="size" id="s" value="small" data-cal="20" data-price="50">
-          <label for="s">Маллый бургер (50 рублей, 20 калорий)</label>
+          <input type="radio" name="size" id="s" value="small" data-cal="20" data-price="50" checked>
+          <label for="s">Малый бургер (50 рублей, 20 калорий)</label>
         </div>
         <div class="item">
           <input type="radio" name="size" id="xl" value="big" data-cal="40" data-price="100">
-          <label for="xl" checked>Большой бургер (100 рублей, 40 калорий)</label>
+          <label for="xl">Большой бургер (100 рублей, 40 калорий)</label>
         </div>
       </div>
 
@@ -32,7 +32,7 @@
           <label for="salad">С салатом (+20 рублей, +5 калорий)</label>
         </div>
         <div class="item">
-          <input type="radio" name="stuffing" id="cheese" value="stuffing-cheese" data-cal="20" data-price="10">
+          <input type="radio" name="stuffing" id="cheese" value="stuffing-cheese" data-cal="20" data-price="10" checked>
           <label for="cheese">С сыром (+10 рублей, +20 калорий)</label>
         </div>
         <div class="item">
@@ -45,15 +45,23 @@
       <h4 class="title">Выберите топинг</h4>
       <div class="items">
         <div class="item">
-          <input type="checkbox" name="topping" id="condiment" value="small" data-cal="15" data-price="0">
+          <input type="checkbox" name="topping" id="condiment" value="topping-prep" data-cal="0" data-price="15">
           <label for="condiment">Посыпать преправой (+15 рублей, +0 калорий)</label>
         </div>
         <div class="item">
-          <input type="checkbox" name="topping" id="mayonnaise" value="small" data-cal="5" data-price="20">
+          <input type="checkbox" name="topping" id="mayonnaise" value="topping-moes" data-cal="5" data-price="20">
           <label for="mayonnaise">Полить майонезом (+20 рублей, +5 калорий)</label>
         </div>
       </div>
-      <button type="submit">Заказать</button>
+
+      <button class="btn">Заказать</button>
+
+      <hr>
+
+      <div class="sum">
+        <p class="sum__price">Итого: <span id="sum__price">0</span></p>
+        <p class="sum__cal">Количество калорий: <span id="sum__cal">0</span> </p>
+      </div>
     </form>
   </main>
 

@@ -34,15 +34,18 @@ input {
   margin-bottom: 15px;
 }
 
-button {
-  margin: 0 auto;
+.btn {
   display: block;
+  margin: 0 auto;
 
-  text-align: center;
-  border: none;
+  margin-bottom: 15px;
   padding: 1rem;
+  border: none;
+  cursor: pointer;
+
+
   color: white;
-  font-size: 1rem;
+  font-size: 1.25rem;
 
   background-color: brown;
   border-radius: 5px;
