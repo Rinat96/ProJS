@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson4 RegExp</title>
+  <style>
+    .form {
+      margin-top: 15px;
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form input {
+      width: 300px;
+      box-sizing: border-box;
+      margin-bottom: 15px;
+    }
+
+    .form button {
+      margin-top: 15px;
+    }
+
+    .error {
+      border: solid red;
+    }
+
+    span {
+      margin-left: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="random_text">Lorem ipsum dolor 'sit amet consectetur, adipisicing' elit. Culpa atque earum velit expedita
+    placeat ad, possimus tempora molestias deleniti aren't dolores hic perspiciatis aliquam suscipit. Vel mollitia
+    'laborum
+    necessitatibus' saepe aren't accusamus?
+  </div>
+  <form class="form" action="#">
+    <h3 class="form__title">Просто форма</h3>
+    <div class="result"></div>
+    <div><input type="text" name="name" id="name" placeholder="Введите ваше имя"></div>
+    <div><input type="tel" name="tel" id="tel" placeholder="Введите телефон в виде +7(000)000-0000"></div>
+    <div><input type="email" name="email" id="email" placeholder="Введите ваш email"></div>
+    <div><textarea name="text" id="text" cols="38" rows="5" placeholder="Введите сообщение"></textarea></div>
+    <button type="submit">Валидация</button>
+  </form>
+  <script src="main.js"></script>
+</body>
+
+</html>
