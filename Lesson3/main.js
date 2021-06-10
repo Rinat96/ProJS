@@ -5,7 +5,7 @@ class ProductList {
   constructor(selector) {
     this.container = document.querySelector(selector);
     this.Products = [];
-
+    console.log(this.fetchProducts());
     this.fetchProducts()
       .then(data => {
         this.goods = [...data];
