@@ -17,18 +17,39 @@
         <div class="logo">TestShop</div>
         <div class="left__side">
           <div class="search__box">
-            <input class="search__input" type="search" name="search" id="search"> <label class="search__text"
-              for="search">
-              Найти</label>
+
+
+            <form action="#" class="search-form" @submit.prevent="filter">
+              <input class="search__input" type="text" v-model="userSearch">
+              <button class="search__text" type="submit">Найти</button>
+            </form>
+
           </div>
-          <button class="basket-button" type="button">Корзина</button>
-          <div class="basket-block invisible"></div>
+          <button class="basket-button" type="button" @click="showCart = !showCart">Корзина</button>
+          <div class="basket-block" v-show="showCart">
+            <p v-if="!cartItems.length">Корзина пуста</p>
+
+            <div class="cart-item" v-for="item of cartItems" :key="item.id_product">
+              <div class="cart-content">
+                <img :src="imgCart" alt="Some image">
+                <div class="cart-desc">
+                  <p class="cart-title">{{item.product_name}}</p>
+                  <p class="cart-quantity">Quantity: {{item.quantity}}</p>
+                  <p class="cart-single-price">{{item.price}}</p>
+                </div>
+              </div>
+              <div class="right-block">
+                <p class="cart-price">{{item.price * item.quantity}} </p>
+                <button class="del-btn" @click="remove(item)">&times;</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </header>
     <main>
       <div class="products center">
-        <div class="goods-item" v-for="product of products" :key="product.id_product">
+        <div class="goods-item" v-for="product of filtered" :key="product.id_product">
           <img :src="imgCatalog" alt="img">
           <div class="goods-item__content">
             <h3 class="goods-title">Название товара: {{product.product_name}}</h3>
