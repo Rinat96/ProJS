@@ -34,7 +34,6 @@ button:hover {
 
 
 .header {
-    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -99,30 +98,6 @@ button:hover {
     padding-top: 10px;
     color: brown;
     margin-bottom: 10px;
-}
-
-
-
-/*Busket*/
-.cart-item {
-    position: absolute;
-    top: 80px;
-    right: 20px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    width: 350px;
-    padding: 10px 10px;
-    box-sizing: border-box;
-    box-shadow: 1px 1px 20px;
-    border-radius: 15px;
-}
-
-.cart-content {
-    display: flex;
-    flex-direction: column;
 }
 
 .invisible {
