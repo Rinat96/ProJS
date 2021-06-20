@@ -1,60 +1,27 @@
 const API_URL = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses';
 
-
-class Item {
-  rendered = false;
-  constructor(product, img = 'https://via.placeholder.com/200x150') {
-    this.product_name = product.product_name;
-    this.id_product = product.id_product;
-    this.price = product.price;
-    this.img = img;
-  }
-
-  render() {
-    this.rendered = true;
-    return `<div class="goods-item" data-id="${this.id_product}">
-    <img src="${this.img}" alt="${this.product_name}">
-      <div class="goods-item__content"> 
-       <h3 class="goods-title">Название товара: ${this.product_name}</h3>
-       <span>ID товара: ${this.id_product}</span>
-       <p class="goods-text">Цена товара: ${this.price}</p>
-       <button class="btn buy-btn" data-id="${this.id_product}">Купить</button>
-     </div>
- </div>`
-  }
-}
-
 class List {
-  // static itemsMap = {
-  //   Products: ProductsItem,
-  //   Basket: BasketItem
-  // }
+  products = [];
 
-  constructor(container, url) {
-    this.container = document.querySelector(container); //контейнер разметки
-    this.url = url;
+  constructor(selector) {
+    this.container = document.querySelector(selector);
+    this.Products = [];
     this.init()
   }
 
-  getJson(url) {
-    return fetch(`${API_URL + this.url}`)
+  getJson() {
+    return fetch(`${API_URL}/catalogData.json`)
       .then(data => data.json())
       .catch(error => console.log(`Ошибка при соединении с сервером`))
   }
 
   handelData(data) {
-
-    this.goods = [...data];
+    this.products = [...data];
     // for (let item of data) {
     //   this.products.push(new List.itemsMap[this.constructor.name](item));
     // }
     this.render();
   }
-
-  /**
-   * Расчет стоимости всех товаров
-   * @returns {number}
-   */
 
   sumItems() {
     let sum = 0;
@@ -89,15 +56,13 @@ class List {
   //   this.render();
   // }
 
-  init() {
-    return false;
-  }
+  init() {}
 }
 
 class Products extends List {
 
-  constructor(cart, container = '.products', url = '/catalogData.json') {
-    super(url, container);
+  constructor(cart, container = '.products') {
+    super(container);
     this.cart = cart;
     this.getJson()
       .then(data => this.handelData(data));
@@ -114,8 +79,48 @@ class Products extends List {
 
 }
 
+
+
+
+
+
+
+class Item {
+  product_name = '';
+  price = 0;
+  id_product = 0;
+  img = '';
+  rendered = false;
+  constructor(product, img = 'https://via.placeholder.com/200x150') {
+    ({
+      product_name: this.product_name,
+      price: this.price,
+      id_product: this.id_product
+    } = product);
+    this.img = img;
+  }
+
+  render() {
+    rendered = true;
+    return `<div class="product-item" data-id="${this.id_product}">
+    <img src="${this.img}" alt="${this.product_name}">
+      <div class="product-item__content"> 
+       <h3 class="product-title">Название товара: ${this.product_name}</h3>
+       <span>ID товара: ${this.id_product}</span>
+       <p class="product-text">Цена товара: ${this.price}</p>
+       <button class="btn buy-btn" data-id="${this.id_product}">Купить</button>
+     </div>
+ </div>`
+  }
+}
+
 class ProductsItem extends Item {}
 
+
+
+
+
+/*
 class Basket extends List {
   constructor(container = '.basket-block', url = '/getBasket.json') {
     super(container, url);
@@ -191,7 +196,7 @@ class BasketItem extends Item {
           <div class="cart-desc">
             <p class="cart-title">${this.product_name}</p>
             <p class="cart-quantity">Quantity: ${this.quantity}</p>
-            <p class="cart-single-price">${this.price} each</p>
+            <p class="cart-single-price">${this.price}</p>
           </div>
         </div>
         <div class="right-block">
@@ -211,8 +216,8 @@ class BasketItem extends Item {
     document.querySelector('.cart-item[data-id="${this.id_product}"]').remove();
   }
 
-}
+}*/
 
 
-const basket = new Basket();
-const list = new Products(basket);
+// const basket = new Basket();
+const list = new Products();

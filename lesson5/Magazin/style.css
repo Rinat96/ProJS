@@ -100,6 +100,52 @@ button:hover {
     margin-bottom: 10px;
 }
 
-.invisible {
-    display: none;
+.basket-block {
+    position: absolute;
+    right: 350px;
+    top: 80px;
+
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    box-sizing: border-box;
+
+    box-shadow: rgb(107, 103, 103) 6px 9px 20px 0px;
+    background: powderblue;
+    color: black;
+    border-radius: 10px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.cart-item:last-child {
+    margin-bottom: 0;
+}
+
+.cart-content {
+    display: flex;
+    margin-right: 15px;
+}
+
+.cart-content img {
+    margin-right: 15px;
+}
+
+.cart-title {
+    font-weight: 900;
+}
+
+.right-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.del-btn {
+    margin-left: 10px;
 }
